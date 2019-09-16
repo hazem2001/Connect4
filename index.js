@@ -2,10 +2,10 @@ var odd = true; //true is red, false is yello
 var array =
         [
          [0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 1, 0, 0, 0],
+         [0, 0, 1, 0, 0, 0, 0],
+         [0, 1, 0, 0, 0, 0, 0],
+         [1, 0, 0, 0, 0, 0, 0],
          [0, 0, 0, 0, 0, 0, 0],
          [0, 0, 0, 0, 0, 0, 0]]; // red is 1, yellow is 2
 
@@ -147,7 +147,7 @@ function check(x, y, color)
 
   for (var i = x - 1, j = y + 1, num = 0; num < 2; num++, i += 2, j -= 2)
   {
-    if (insideArray(i) && array[j][i] === color)
+    if (insideArray(j) && array[j][i] === color)
     {
       if (diagonalCheckLeft(x, y, color))
       {
@@ -526,4 +526,4 @@ function diagonalCheckLeft(x, y, color)
   }
 }
 
-console.log(check(3, 0, 1));
+console.log(check(0, 4, 1));
