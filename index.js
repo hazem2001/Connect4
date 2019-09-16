@@ -1,10 +1,10 @@
 var odd = true; //true is red, false is yello
 var array =
         [
-         [0, 0, 0, 1, 0, 0, 0],
-         [0, 0, 0, 0, 1, 0, 0],
-         [0, 0, 0, 0, 0, 1, 0],
-         [0, 0, 0, 0, 0, 0, 1],
+         [0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0],
          [0, 0, 0, 0, 0, 0, 0],
          [0, 0, 0, 0, 0, 0, 0],
          [0, 0, 0, 0, 0, 0, 0]]; // red is 1, yellow is 2
@@ -75,7 +75,6 @@ function putCoin(column, odd)
       array[i][column] = numColor;
       $("#c" + i + "" + column).css("background-color", color);
 
-      console.log(check(column, i, numColor));
       if (check(column, i, numColor))
       {
         if (odd)
@@ -137,9 +136,8 @@ function check(x, y, color)
 
   for (var i = x + 1, j = y + 1, num = 0; num < 2; num++, i -= 2, j -= 2)
   {
-    if (insideArray(i) && array[i][j] === color)
+    if (insideArray(j) && array[j][i] === color)
     {
-      console.log("I was here");
       if (diagonalCheckRight(x, y, color))
       {
         return true;
@@ -149,9 +147,8 @@ function check(x, y, color)
 
   for (var i = x - 1, j = y + 1, num = 0; num < 2; num++, i += 2, j -= 2)
   {
-    if (insideArray(i) && array[i][j] === color)
+    if (insideArray(i) && array[j][i] === color)
     {
-      console.log("I was at left");
       if (diagonalCheckLeft(x, y, color))
       {
         return true;
@@ -365,7 +362,6 @@ function diagonalCheckRight(x, y, color)
       if (insideArray(y) && array[y][x] === color)
       {
         count++;
-        console.log("YES");
       }
       else
       {
@@ -388,7 +384,6 @@ function diagonalCheckRight(x, y, color)
       x++;
       y++;
 
-      console.log("hugrhutghu");
       if (insideArray(y) && array[y][x] === color)
       {
         count++;
@@ -406,7 +401,6 @@ function diagonalCheckRight(x, y, color)
       x--;
       y--;
 
-      console.log("hfgyrfyg");
       if (insideArray(y) && array[y][x] === color)
       {
         count++;
