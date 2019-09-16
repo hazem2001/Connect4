@@ -1,0 +1,35 @@
+body
+{
+  text-align: center;
+}
+
+#top-container
+{
+  width: 75%;
+  margin: 10% auto 4px auto;
+  padding: 3px;
+}
+#main-container
+{
+  width: 75%;
+  background-color: blue;
+  margin: 0 auto;
+  padding: 3px;
+}
+
+.coin
+{
+  background-color: white;
+  border: black;
+  display: inline-block;
+  padding-top: 10%;
+  width: 10%;
+  margin: 1%;
+  border-radius: 100%;
+}
+
+.winning-title
+{
+  position: absolute;
+
+}
